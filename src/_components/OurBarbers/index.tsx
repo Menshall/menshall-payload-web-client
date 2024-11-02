@@ -20,7 +20,7 @@ const OurBarbers = () => {
         ...acc,
         [curr.id as string]: curr.image,
       };
-    });
+    }, {});
   }, [generalData.barbers.barbers?.length]);
 
   React.useEffect(() => {
