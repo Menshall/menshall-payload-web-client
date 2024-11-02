@@ -1,0 +1,36 @@
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  width: 100vw;
+  z-index: 999999;
+  backdrop-filter: blur(7.5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-inline);
+}
+
+.modal {
+  position: relative;
+  background-color: var(--bg);
+  box-shadow: 0 0 300px -47px rgba(25,175,91,1);
+  padding: 48px;
+  width: 100%;
+  max-width: 600px;
+
+  @media (max-width: 767px) {
+    padding: 48px 16px 32px;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  display: flex;
+  z-index: 999;
+  color: var(--off-white);
+}

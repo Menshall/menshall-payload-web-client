@@ -1,0 +1,29 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex-grow: 1;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  a {
+    color: var(--off-white);
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    color: var(--placeholder);
+  }
+}

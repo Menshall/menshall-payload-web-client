@@ -1,0 +1,14 @@
+.scroll {
+  position: absolute;
+  z-index: 9;
+  right: 0;
+  top: 0;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--primary-dark);
+  border-radius: 100%;
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

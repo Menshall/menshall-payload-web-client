@@ -1,0 +1,21 @@
+div.slider {
+  min-width: 100%;
+  --slide-size: 30%;
+  --slide-spacing: 16px;
+  gap: 0;
+  @media (max-width: 991px) {
+    --slide-size: 45%;
+  }
+  @media (max-width: 767px) {
+    --slide-size: 75%;
+  }
+  @media (max-width: 480px) {
+    --slide-size: 90%;
+  }
+}
+
+div.viewport {
+  min-width: 100%;
+  position: relative;
+  overflow: visible;
+}

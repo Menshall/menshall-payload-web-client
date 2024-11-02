@@ -1,0 +1,258 @@
+header.header {
+  z-index: 9999 !important;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  height: var(--header-height);
+  .inner {
+    display: grid;
+    grid-gap: 12px;
+    gap: 12px;
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background: var(--title-active);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(7.5px);
+  transition: transform 0.5s ease-in-out;
+  padding: 24px 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 24px 24px;
+  overflow-y: auto;
+  max-height: calc(100% - 24px);
+}
+
+.radialGradient {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.25;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  text-transform: uppercase;
+  line-height: 42px;
+  color: var(--placeholder);
+  padding: 0 24px 0 24px;
+}
+
+.logoBg {
+  position: absolute;
+  left: 0;
+  padding: 72px 16px;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: -1;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  flex-shrink: 0;
+  min-width: 50px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+  }
+}
+
+.link {
+  color: var(--off-white);
+}
+
+.active {
+  color: var(--primary);
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--off-white);
+  flex-grow: 1;
+  justify-content: center;
+  z-index: 1;
+
+  .phoneIcon {
+    height: 32px;
+    width: 32px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 36px;
+    border: 1px solid var(--Body, #32333d);
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(7.5px);
+    cursor: pointer;
+  }
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.subnav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 16px;
+}
+
+.subtitle {
+  color: var(--placeholder);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: flex-end;
+  grid-column: 12/13;
+  z-index: 9999;
+  @media (max-width: 767px) {
+    grid-column: 6/7;
+  }
+}
+
+.hamburger {
+  padding: 12px;
+  border: 1px solid var(--off-white);
+  flex-shrink: 0;
+  align-self: center;
+  color: var(--off-white);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  z-index: 9999;
+
+  @media (max-width: 767px) {
+    padding: 8px;
+  }
+}
+
+.bottom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  & > div {
+    justify-content: center;
+  }
+
+  .button {
+    padding: 24px;
+    justify-content: center;
+  }
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-24);
+
+  a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 100%;
+    border: 1px solid var(--body);
+    background: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+    color: var(--off-white);
+    transition: all 0.3s ease-in-out;
+    flex-shrink: 0;
+  }
+
+  a:hover,
+  a:focus {
+    color: var(--primary-dark);
+  }
+}
+
+.phones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-column: 2/12;
+  gap: var(--sp-8);
+  @media (max-width: 767px) {
+    grid-column: 2/6;
+  }
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-16);
+  color: var(--off-white);
+  z-index: 1;
+
+  .phoneIcon {
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 36px;
+    border: 1px solid var(--body);
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(7.5px);
+    cursor: pointer;
+
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}

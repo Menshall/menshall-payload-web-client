@@ -1,0 +1,103 @@
+.timepicker {
+  display: flex;
+  flex-direction: column;
+}
+
+.times {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+  gap: 12px;
+}
+
+.time {
+  position: relative;
+  border-radius: 32px;
+  border: 1px solid var(--body);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+  color: var(--off-white);
+  height: var(--date-btn-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+
+  input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  label {
+    cursor: pointer;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.checked {
+  color: var(--primary-dark);
+  border: 2px solid var(--primary-dark);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--off-white);
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  h4 {
+    text-transform: capitalize;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--date-btn-height);
+    width: var(--date-btn-height);
+    color: var(--off-white);
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+    }
+  }
+
+  button:first-of-type {
+    transform: rotate(180deg);
+  }
+}
+
+.empty {
+  grid-column: 1/8;
+}

@@ -1,0 +1,46 @@
+.card {
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid var(--off-white);
+  padding: var(--sp-24);
+  gap: var(--sp-24);
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+  flex-grow: 1;
+
+  p {
+    color: var(--placeholder)
+  }
+}
+
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  svg {
+    transform: rotate(180deg);
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 767px){
+  .card {
+    align-items: center;
+  }
+  .details {
+    p {
+      display: none;
+    }
+  }
+}

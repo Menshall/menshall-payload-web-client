@@ -1,0 +1,18 @@
+.footerContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(7.5px);
+  height: var(--schedule-footer-height);
+  z-index: 9999;
+  align-content: center;
+  //display: flex;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}

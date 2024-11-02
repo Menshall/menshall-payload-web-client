@@ -1,0 +1,28 @@
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="19"
+        height="18"
+        viewBox="0 0 19 18"
+        fill="none"
+>
+    <path
+            d="M8.92578 15.0806L2.78 8.93464"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-miterlimit="10"
+            stroke-linecap="square"
+    />
+    <path
+            d="M2.78 8.93465L8.92578 2.78872"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-miterlimit="10"
+            stroke-linecap="square"
+    />
+    <path
+            d="M2.77914 8.93465L18.4707 8.93465"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-miterlimit="10"
+    />
+</svg>

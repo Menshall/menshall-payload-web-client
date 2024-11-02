@@ -1,0 +1,201 @@
+:root {
+  --title-active: #050505;
+  --body: #32333d;
+  --label: #2b2d42;
+  --placeholder: #919aa8;
+  --line: #dbe0e7;
+  --input-bg: #d9dbe9;
+  --bg: #010300;
+  --off-white: #d9dbe9;
+  --primary: #1ce889;
+  --primary-dark: #19af5b;
+  --secondary: #dddbcb;
+  --error: #ff5a5f;
+  --success: #56e39f;
+  --warning: #ffa630;
+
+  --h1: 400 72px / 80px var(--font-montserrat);
+  --h1-bold: 600 48px / 52px var(--font-montserrat);
+  --h2: 400 48px / 52px var(--font-montserrat);
+  --h2-bold: 600 48px / 52px var(--font-montserrat);
+  --h3: 400 32px / 42px var(--font-montserrat);
+  --h3-bold: 600 32px / 42px var(--font-montserrat);
+  --h4: 400 26px / 34px var(--font-montserrat);
+  --h4-bold: 600 26px / 34px var(--font-montserrat);
+  --h5: 400 22px / 28px var(--font-montserrat);
+
+  --p1: 300 24px/150% var(--font-montserrat);
+  --p2: 300 18px/28px var(--font-montserrat);
+  --p3: 300 16px/28px var(--font-montserrat);
+  --p4: 300 12px/22px var(--font-montserrat);
+
+  // spacings
+
+  --sp-4: 4px;
+  --sp-8: 8px;
+  --sp-12: 12px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-40: 40px;
+  --sp-72: 72px;
+
+  // other
+
+  --min-content-width: 320px;
+  --max-content-width: 1200px;
+
+  --header-height: 115px;
+  --header-height-negative: -115px;
+
+  --schedule-footer-height: 80px;
+
+  --date-btn-height: 48px;
+
+  --padding-inline: 24px;
+  --content-max-width: 1200px;
+  --breakout-max-width: calc(var(--padding-inline) + 2 * var(--content-max-width));
+}
+
+.grid-container {
+  --flap: minmax(var(--padding-inline), 1fr);
+  --content: minmax(var(--min-content-width), var(--max-content-width));
+
+  display: grid;
+  grid-template-columns: var(--flap) var(--content) var(--flap);
+  grid-template-rows: auto;
+  align-items: start;
+  align-content: start;
+}
+
+.grid-content {
+  grid-column: 2/3;
+}
+
+.grid-content-full {
+  grid-column: 1/-1;
+}
+
+.grid-row-min {
+  //grid-auto-rows: min-content;
+}
+
+//.content-grid {
+//  --breakout-size: calc(
+//          (var(--breakout-max-width) - var(--content-max-width)) / 2
+//  );
+//
+//  display: grid;
+//  grid-template-columns:
+//    [full-width-start] minmax(var(--padding-inline), 1fr)
+//    [breakout-start] minmax(0, var(--breakout-size))
+//    [content-start] min(
+//      100% - (var(--padding-inline) * 2),
+//      var(--content-max-width)
+//    )
+//    [content-end]
+//    minmax(0, var(--breakout-size)) [breakout-end]
+//    minmax(var(--padding-inline), 1fr) [full-width-end];
+//  grid-template-rows: auto;
+//  align-items: start;
+//  align-content: start;
+//}
+//
+//.content-grid > :not(.breakout, .full-width),
+//.full-width > :not(.breakout, .full-width) {
+//  grid-column: content;
+//  z-index: 1;
+//}
+//
+//.content-grid > .breakout {
+//  grid-column: breakout;
+//}
+//
+//.content-grid > .full-width {
+//  grid-column: full-width;
+//
+//  display: grid;
+//  grid-template-columns: inherit;
+//}
+
+@media (max-width: 1024px) {
+  :root {
+    --header-height: 96px;
+    --header-height-negative: -96px;
+    --date-btn-height: 36px;
+    --padding-inline: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --h1: 400 48px / 54px var(--font-montserrat);
+    --h1-bold: 600 48px / 54px var(--font-montserrat);
+    --h2: 400 36px / 36px var(--font-montserrat);
+    --h2-bold: 600 36px / 36px var(--font-montserrat);
+    --h3: 400 32px / 36px var(--font-montserrat);
+    --h3-bold: 600 32px / 36px var(--font-montserrat);
+    --h4: 400 26px / 28px var(--font-montserrat);
+    --h4-bold: 600 26px / 28px var(--font-montserrat);
+    --h5: 400 24px / 26px var(--font-montserrat);
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --h1: 400 32px / 36px var(--font-montserrat);
+    --h1-bold: 600 32px / 36px var(--font-montserrat);
+    --h2: 400 32px / 36px var(--font-montserrat);
+    --h2-bold: 600 32px / 36px var(--font-montserrat);
+    --h3: 400 28px / 36px var(--font-montserrat);
+    --h3-bold: 600 28px / 36px var(--font-montserrat);
+    --h4: 400 22px / 28px var(--font-montserrat);
+    --h4-bold: 600 22px / 28px var(--font-montserrat);
+    --h5: 400 20px / 26px var(--font-montserrat);
+  }
+}
+
+h1 {
+  font: var(--h1);
+}
+
+h2 {
+  font: var(--h2);
+}
+
+h3 {
+  font: var(--h3);
+}
+
+h4 {
+  font: var(--h4);
+}
+
+h5 {
+  font: var(--h5);
+}
+
+.p1 {
+  font: var(--p1);
+}
+
+.p2 {
+  font: var(--p2);
+}
+
+.p3 {
+  font: var(--p3);
+}
+
+.p4 {
+  font: var(--p4);
+}
+
+.b-500 {
+  font-weight: 500;
+}
+
+.b-100 {
+  font-weight: 100;
+}

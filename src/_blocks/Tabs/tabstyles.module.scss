@@ -1,0 +1,151 @@
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 12px;
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  flex-shrink: 0;
+  grid-column: 1/5;
+  @media (max-width: 767px) {
+    grid-column: 1/5;
+  }
+}
+
+.button {
+  color: var(--placeholder);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 160%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+  text-align: left;
+
+  span {
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 0;
+    transform: translateX(-100%);
+  }
+
+  svg {
+    transform: rotate(180deg);
+  }
+
+  &:hover {
+    color: var(--off-white);
+    span {
+      width: 20px;
+      transform: translateX(0);
+    }
+  }
+}
+
+.active {
+  color: var(--off-white);
+  span {
+    width: 20px;
+    transform: translateX(0);
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  grid-column: 5/13;
+  max-width: 740px;
+  @media (max-width: 767px) {
+    grid-column: 1/5;
+    gap: 32px;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.description {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 12px;
+  @media (max-width: 767px) {
+    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.subs {
+  grid-column: 1/5;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  @media (max-width: 767px) {
+    flex-direction: row;
+    gap: 32px;
+    grid-column: 1/5;
+  }
+}
+
+.sub {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  span {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 14px;
+    color: var(--placeholder);
+  }
+}
+
+.text {
+  grid-column: 5/13;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 767px) {
+    grid-column: 1/5;
+  }
+}
+
+.image {
+  display: flex;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 4/3;
+    height: auto;
+    @media (max-width: 576px) {
+      aspect-ratio: 1/1;
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.inner {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 56px;
+  height: calc(100svh - var(--header-height) - var(--schedule-footer-height));
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+}
+

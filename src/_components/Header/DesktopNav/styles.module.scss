@@ -1,0 +1,14 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  gap: var(--sp-24);
+  z-index: 1;
+  grid-column: 4/10;
+
+  a {
+    text-decoration: none;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,33 @@
+.scroll {
+  height: calc(100svh - var(--header-height) - var(--schedule-footer-height));
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-40);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-24);
+}
+
+.visits {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+
+  & > h2 {
+    height: var(--schedule-footer-height);
+    font-weight: bold;
+  }
+
+  h5 {
+    color: var(--placeholder);
+  }
+}
+

@@ -1,0 +1,37 @@
+.accountTitle {
+  position: relative;
+  display: flex;
+  //align-items: center;
+  align-items: flex-start;
+  padding-top: 16px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sp-16);
+  height: var(--schedule-footer-height);
+
+  h2 {
+    min-width: 100%;
+    margin: 0;
+  }
+
+  &:has(h2) {
+    height: auto;
+
+    h2 {
+      padding-top: 16px;
+      padding-bottom: 32px;
+    }
+  }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-8);
+}
+
+@media (max-width: 767px) {
+  .accountTitle {
+    gap: 0
+  }
+}

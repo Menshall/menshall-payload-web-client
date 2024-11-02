@@ -1,0 +1,21 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  h3, p {
+    text-align: center;
+  }
+}
+
+.buttons {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  button {
+    flex-grow: 1;
+  }
+}

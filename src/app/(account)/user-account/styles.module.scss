@@ -1,0 +1,15 @@
+.accountCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--sp-24);
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: var(--sp-24);
+}
+
+@media (max-width: 767px) {
+  .accountCards {
+    gap: var(--sp-16);
+  }
+}
+

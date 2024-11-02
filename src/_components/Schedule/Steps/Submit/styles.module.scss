@@ -1,0 +1,24 @@
+.submit {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  container-name: submit;
+  container-type: inline-size;
+}
+
+.summary {
+  display: none;
+}
+
+@container container (max-width: 991px) {
+  .summary {
+    display: block;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 420px;
+}

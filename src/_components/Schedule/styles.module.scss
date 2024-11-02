@@ -1,0 +1,100 @@
+.label {
+  height: var(--schedule-footer-height);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-8);
+
+  span {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100svh - var(--header-height) - var(--schedule-footer-height));
+  container-name: container;
+  container-type: inline-size;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: inherit;
+  overflow: hidden;
+  gap: 48px;
+}
+
+.scroll {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 var(--padding-inline) var(--header-height);
+  height: inherit;
+  margin-left: calc(-1 * var(--padding-inline));
+  margin-right: calc(-1 * var(--padding-inline));
+  width: calc(100% + var(--padding-inline) + var(--padding-inline));
+}
+
+.verticalCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.locationCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+
+  & > p:last-of-type {
+    padding-top: 8px;
+    margin-top: auto;
+    color: var(--placeholder);
+  }
+}
+
+
+/////
+
+
+@container container (max-width: 1024px) {
+  .verticalCards {
+    gap: 16px;
+  }
+}
+
+@container container (max-width: 991px) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+
+  .summary {
+    display: none;
+  }
+}
+
+@container container (max-width: 767px) {
+  .scroll {
+    width: calc(100% + var(--padding-inline) + var(--padding-inline));
+    max-width: initial;
+  }
+}
+
+@container container (max-width: 576px) {
+  .verticalCards {
+    max-width: initial;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@container container (max-width: 380px) {
+  .verticalCards {
+    gap: 8px;
+  }
+}

@@ -1,0 +1,138 @@
+header.header {
+  position: sticky;
+  top: 0;
+  min-width: 100%;
+  z-index: 9999;
+  height: var(--header-height);
+  align-content: center;
+}
+
+.inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 12px;
+  gap: 12px;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  gap: var(--sp-24);
+  z-index: 1;
+  grid-column: 4/10;
+
+  a {
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 767px) {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100svh;
+    transform: translateX(-100%);
+    transition: transform .3s linear;
+
+    flex-direction: column;
+
+    span {
+      display: none;
+    }
+  }
+}
+
+.opened {
+  @media (max-width: 767px) {
+    transform: translateX(0);
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 1;
+  grid-column: 1/4;
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.link {
+  color: var(--off-white);
+}
+
+.active {
+  color: var(--primary);
+}
+
+.hamburger {
+  padding: 12px;
+  border: 1px solid var(--off-white);
+  flex-shrink: 0;
+  align-self: center;
+  color: var(--off-white);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  z-index: 9999;
+
+  @media (max-width: 767px) {
+    padding: 8px;
+  }
+}
+
+//.phone {
+//  display: flex;
+//  align-items: center;
+//  gap: var(--sp-16);
+//  color: var(--off-white);
+//  z-index: 1;
+//
+//  .phoneIcon {
+//    padding: 6px;
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;
+//    border-radius: 36px;
+//    border: 1px solid var(--body);
+//    background: rgba(0, 0, 0, 0.05);
+//    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+//    backdrop-filter: blur(7.5px);
+//    cursor: pointer;
+//
+//    svg {
+//      width: 12px;
+//      height: 12px;
+//    }
+//  }
+//}
+
+//.phones {
+//  position: relative;
+//  display: flex;
+//  flex-direction: column;
+//  align-items: flex-end;
+//  justify-content: center;
+//  grid-column: 10/13;
+//  gap: var(--sp-8);
+//}
+
+.right {
+  grid-column: 10/13;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp-12);
+}
+
+

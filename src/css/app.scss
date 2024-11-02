@@ -1,0 +1,114 @@
+@use './colors.scss' as *;
+
+body,
+html {
+  background: var(--bg);
+  min-height: 100svh;
+  color: var(--off-white);
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+
+  main {
+    margin-top: var(--header-height-negative);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+}
+
+p {
+  font-size: 18px;
+  font-style: normal;
+  line-height: 160%;
+  margin: 0;
+}
+
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  li:not(li:last-of-type) {
+    margin-bottom: var(--sp-16);
+  }
+  li {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 16px;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 160%;
+  }
+  li:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: var(--primary-dark);
+    display: block;
+    flex-shrink: 0;
+  }
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+figure {
+  margin: 0;
+
+  img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+}
+
+#portal {
+  position: absolute;
+  z-index: 999999;
+}
+
+
+
+.richText {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: var(--sp-24);
+  }
+
+  hr {
+    margin: var(--sp-16) 0;
+    padding: 0;
+    height: 0;
+    border: none;
+  }
+}

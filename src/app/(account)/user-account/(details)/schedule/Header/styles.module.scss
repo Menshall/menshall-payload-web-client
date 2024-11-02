@@ -1,0 +1,55 @@
+.header {
+  position: absolute;
+  right: 0;
+  bottom: -12px;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-25%);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-24);
+  z-index: 1;
+  grid-column: 2/10;
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  margin: var(--sp-12) 0;
+
+  span {
+    display: block;
+    height: 2px;
+    width: 32px;
+    background-color: var(--body);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .current {
+    background-color: var(--off-white);
+    opacity: 0.5;
+  }
+
+  .passed {
+    background-color: var(--off-white);
+  }
+}
+
+.stepCounter {
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 10px;
+}
+
+@media (max-width: 767px) {
+  .header {
+    position: static;
+    //position: sticky;
+    //padding-bottom: 16px;
+  }
+}

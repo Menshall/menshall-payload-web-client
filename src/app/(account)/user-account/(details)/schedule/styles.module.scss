@@ -1,0 +1,10 @@
+.scroll {
+  position: relative;
+  & > div {
+    height: calc(100svh - var(--header-height) - var(--schedule-footer-height) - var(--schedule-footer-height));
+
+    & > div {
+      height: inherit;
+    }
+  }
+}

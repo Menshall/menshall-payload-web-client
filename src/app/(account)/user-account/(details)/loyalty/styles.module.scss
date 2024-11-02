@@ -1,0 +1,28 @@
+.loyalties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-32);
+}
+
+.loyaltyPage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-40);
+
+  h2 {
+    font-weight: bold;
+  }
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-24);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-24);
+}

@@ -1,0 +1,101 @@
+.dayPicker {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.headRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.headCell {
+  height: var(--date-btn-height);
+  width: var(--date-btn-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-weight: 400;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  td {
+    height: var(--date-btn-height);
+    width: var(--date-btn-height);
+  }
+}
+
+.button {
+  border-radius: 32px;
+  color: var(--off-white);
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 16px;
+  flex-shrink: 0;
+  height: var(--date-btn-height);
+  width: var(--date-btn-height);
+  border: 1px solid var(--body);
+}
+
+.disabled {
+  opacity: 0.4;
+  cursor: initial;
+}
+
+.selected {
+  color: var(--primary-dark);
+  border: 2px solid var(--primary-dark);
+  pointer-events: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navButton {
+  height: var(--date-btn-height);
+  width: var(--date-btn-height);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--off-white);
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+}
+
+.label {
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 130%;
+  text-transform: capitalize;
+}
+
+.table {
+  min-width: 100%;
+}
