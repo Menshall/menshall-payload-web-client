@@ -385,11 +385,6 @@ export const useScheduleStore = create<ScheduleStoreProps>()(
           ],
         };
 
-        console.log({
-          location,
-          data,
-        });
-
         await fetchLocalEndpoint({
           url: "submit",
           body: { location, data },
