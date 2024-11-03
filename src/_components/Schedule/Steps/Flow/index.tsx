@@ -4,18 +4,19 @@ import SelectableCard from "@/_components/Schedule/SelectableCard";
 import styles from "../../styles.module.scss";
 import { useScheduleStore } from "@/stores/schedule";
 import Typography from "@/_components/Typography";
+import { useGeneralData } from "@/providers/general";
 
 const Flow = () => {
   const updateSelected = useScheduleStore(
     (state) => state.actions.updateSelected,
   );
+  const { schedule } = useGeneralData();
   const flow = useScheduleStore((state) => state.selected.flow);
-
   return (
     <div className={styles.verticalCards}>
       <SelectableCard
-        icon="barber"
-        id={"master"}
+        id="master"
+        image={schedule.master}
         name="flow"
         type="radio"
         checked={"master" === flow}
@@ -26,8 +27,8 @@ const Flow = () => {
         </Typography>
       </SelectableCard>
       <SelectableCard
-        icon="calendar"
         id="service"
+        image={schedule.service}
         name="flow"
         type="radio"
         checked={"service" === flow}
