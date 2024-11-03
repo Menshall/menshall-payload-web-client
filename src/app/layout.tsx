@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 import React from "react";
 import { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -60,7 +62,6 @@ export default async function RootLayout({
       suppressHydrationWarning
       className={font.className}
       style={{
-        //@ts-ignore
         "--font-montserrat": `${font.style.fontFamily}`,
       }}
     >
@@ -68,22 +69,22 @@ export default async function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         {/* eslint-disable-next-line @next/next/inline-script-id */}
-        {/*<Script*/}
-        {/*  strategy="afterInteractive"*/}
-        {/*  dangerouslySetInnerHTML={{*/}
-        {/*    __html: `*/}
-        {/*        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':*/}
-        {/*        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],*/}
-        {/*        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=*/}
-        {/*        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);*/}
-        {/*        })(window,document,'script','dataLayer','GTM-MC5V4ML');*/}
-        {/*      `,*/}
-        {/*  }}*/}
-        {/*/>*/}
-        {/*<Script*/}
-        {/*  async*/}
-        {/*  src="https://www.googletagmanager.com/gtm.js?id=GTM-MC5V4ML"*/}
-        {/*/>*/}
+        <Script
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','GTM-MC5V4ML');
+              `,
+          }}
+        />
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-MC5V4ML"
+        />
         <Script
           type="text/javascript"
           async
@@ -107,24 +108,24 @@ export default async function RootLayout({
           `,
           }}
         />
-        {/*<Script*/}
-        {/*  strategy="lazyOnload"*/}
-        {/*  async*/}
-        {/*  src="https://www.google-analytics.com/analytics.js"*/}
-        {/*/>*/}
-        {/*<Script*/}
-        {/*  src="https://connect.facebook.net/signals/config/1223843247804052?v=next&amp;r=stable&amp;domain=www.menshall.com.ua"*/}
-        {/*  async*/}
-        {/*/>*/}
-        {/*<Script*/}
-        {/*  strategy="lazyOnload"*/}
-        {/*  src="https://connect.facebook.net/signals/config/279072927584071?v=next&amp;r=stable&amp;domain=www.menshall.com.ua"*/}
-        {/*  async*/}
-        {/*/>*/}
-        {/*<Script*/}
-        {/*  async*/}
-        {/*  src="https://connect.facebook.net/en_US/fbevents.js?v=next"*/}
-        {/*/>*/}
+        <Script
+          strategy="lazyOnload"
+          async
+          src="https://www.google-analytics.com/analytics.js"
+        />
+        <Script
+          src="https://connect.facebook.net/signals/config/1223843247804052?v=next&amp;r=stable&amp;domain=www.menshall.com.ua"
+          async
+        />
+        <Script
+          strategy="lazyOnload"
+          src="https://connect.facebook.net/signals/config/279072927584071?v=next&amp;r=stable&amp;domain=www.menshall.com.ua"
+          async
+        />
+        <Script
+          async
+          src="https://connect.facebook.net/en_US/fbevents.js?v=next"
+        />
       </head>
       <body className="grid-container">
         <div id="portal" />
