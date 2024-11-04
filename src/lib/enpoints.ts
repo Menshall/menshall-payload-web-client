@@ -205,6 +205,19 @@ export const getPage = async (slug: string, meta?: boolean): Promise<Page> => {
   }
 };
 
+export const getPages = async (): Promise<Array<Page>> => {
+  try {
+    const client = await clientPromise;
+    const db = client.db("menshall-payload-web-admin");
+
+    const data = await db.collection("pages").find({}).toArray();
+
+    return data as unknown as Array<Page>;
+  } catch (error) {
+    throw new Error("fetch page failed");
+  }
+};
+
 export const getPosts = async (): Promise<Array<Post>> => {
   try {
     const client = await clientPromise;

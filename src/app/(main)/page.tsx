@@ -10,12 +10,6 @@ import RecentPosts from "@/_components/RecentPosts";
 import { generateMeta } from "@/_utilities/generateMeta";
 import { getPage } from "@/lib/enpoints";
 
-//                               12.4 kB         497 kB
-// + First Load JS shared by all            88.1 kB
-//   ├ chunks/7023-969202ab639ca081.js      31.5 kB
-//   ├ chunks/fd9d1056-ae52f39498331e04.js  53.7 kB
-//   └ other shared chunks (total)          2.91 kB
-
 export default async function Page() {
   const page = await getPage("home");
 
