@@ -66,6 +66,15 @@ export default async function RootLayout({
       }}
     >
       <head>
+        <meta
+          name="google-site-verification"
+          content="1hI5hIelVGpo7hWU21L8lqursZg1Jh9HYIVjR_vKl8Q"
+        />
+        <meta
+          name="keywords"
+          content="Men's Hall, Львів, Барбершоп, Стрижки, Бороди, Манікюр, Чоловічий манікюр, Педикюр"
+        />
+
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         {/* eslint-disable-next-line @next/next/inline-script-id */}
