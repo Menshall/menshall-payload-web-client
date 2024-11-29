@@ -14,7 +14,12 @@ import {
   ScheduleState,
   ScheduleStoreProps,
 } from "@/stores/schedule/types";
+import { createClient } from "@supabase/supabase-js";
 
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+export const supabase = createClient(supabaseUrl, supabaseKey);
 export const initialData: ScheduleState = {
   currentStep: 1,
   repeatLoading: false,
@@ -389,11 +394,37 @@ export const useScheduleStore = create<ScheduleStoreProps>()(
           url: "submit",
           body: { location, data },
           onBefore: () => set({ loading: true }),
-          onSuccess: () => {
+          onSuccess: async () => {
             set({ loading: false });
+
+            await supabase.from("logs").insert({
+              fullname: data.fullname,
+              phone: data.phone,
+              email: data.email,
+              comment: data.comment,
+              appointments: JSON.stringify(data.appointments),
+              error: false,
+              success: true,
+              date: new Date().toLocaleString(),
+              location,
+            });
+
             actions.next();
           },
-          onFailure: (error) => set({ error: error.message }),
+          onFailure: async (error) => {
+            await supabase.from("logs").insert({
+              fullname: data.fullname,
+              phone: data.phone,
+              email: data.email,
+              comment: data.comment,
+              appointments: JSON.stringify(data.appointments),
+              error,
+              success: false,
+              date: new Date().toLocaleString(),
+              location,
+            });
+            set({ error: error.message });
+          },
         });
       },
       reschedule: async (onSuccess) => {
