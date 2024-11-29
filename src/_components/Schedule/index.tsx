@@ -2,7 +2,6 @@
 import React from "react";
 import Flow from "@/_components/Schedule/Flow";
 import { useScheduleStore } from "@/stores/schedule";
-import { SubmitScheduleProps } from "@/stores/schedule/types";
 import Footer from "@/_components/Schedule/Footer";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
