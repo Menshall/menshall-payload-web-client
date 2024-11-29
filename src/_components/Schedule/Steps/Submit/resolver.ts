@@ -30,6 +30,13 @@ export const resolver: Resolver<ScheduleFormData> = async (values) => {
     };
   }
 
+  if (values.name && values.name.trim() && values.name.trim().length < 2) {
+    errors.name = {
+      type: "invalid",
+      message: "Некоректне ім'я",
+    };
+  }
+
   if (!values.phone) {
     errors.phone = {
       type: "required",

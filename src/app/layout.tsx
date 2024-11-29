@@ -128,6 +128,9 @@ export default async function RootLayout({
             gtag('config', 'G-Y9GEJJ9GBV', {
               page_path: window.location.pathname,
             });
+            window.onSubmitSchedule = (event) => {
+              dataLayer.push({event});
+              }
           `,
           }}
         />

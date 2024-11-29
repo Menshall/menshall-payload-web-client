@@ -13,6 +13,7 @@ import Title from "@/_components/Schedule/Title";
 
 const Schedule = ({ hideSummary }: { hideSummary?: boolean }) => {
   const flow = useScheduleStore((state) => state.selected.flow);
+  const location = useScheduleStore((state) => state.selected.location);
   const currentStep = useScheduleStore((state) => state.currentStep);
   const formData = useScheduleStore((state) => state.formData);
   const repeatLoading = useScheduleStore((state) => state.repeatLoading);
@@ -35,6 +36,12 @@ const Schedule = ({ hideSummary }: { hideSummary?: boolean }) => {
         email: formData.email,
         text: formData.text,
       });
+      // @ts-ignore
+      window.onSubmitSchedule(
+        location === "146074"
+          ? "booking_submit_chornovola"
+          : "booking_submit_zelena",
+      );
     }
   };
 
