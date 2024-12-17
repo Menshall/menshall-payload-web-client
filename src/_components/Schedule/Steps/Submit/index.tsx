@@ -15,7 +15,6 @@ const Submit = () => {
     register,
     handleSubmit,
     formState: { errors, isValid },
-    getValues,
     watch,
     setValue,
     control,
@@ -27,6 +26,12 @@ const Submit = () => {
 
   //@ts-ignore
   const phoneValue = watch("phone");
+  //@ts-ignore
+  const nameValue = watch("name");
+  //@ts-ignore
+  const textValue = watch("text");
+  //@ts-ignore
+  const emailValue = watch("email");
 
   React.useEffect(() => {
     getUser().then((user) => {
@@ -49,10 +54,15 @@ const Submit = () => {
     }
   }, [phoneValue]);
 
-  React.useEffect(
-    () => updateFormData({ isValid, ...getValues() }),
-    [isValid, getValues],
-  );
+  React.useEffect(() => {
+    updateFormData({
+      isValid,
+      name: nameValue,
+      text: textValue,
+      email: emailValue,
+      phone: phoneValue,
+    });
+  }, [isValid, phoneValue, nameValue, textValue, emailValue]);
 
   return (
     <div className={styles.submit}>

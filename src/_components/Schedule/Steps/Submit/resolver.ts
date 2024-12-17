@@ -2,7 +2,7 @@ import type { Resolver } from "react-hook-form";
 
 import { ScheduleFormData } from "@/stores/schedule/types";
 
-const emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+const emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,10}$";
 
 interface IError<T> {
   [key: string]: T;
