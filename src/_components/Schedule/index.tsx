@@ -28,6 +28,7 @@ const Schedule = ({ hideSummary }: { hideSummary?: boolean }) => {
   }, []);
 
   const onSubmit = async () => {
+    console.log("submit");
     if (formData) {
       submit({
         name: formData.name,

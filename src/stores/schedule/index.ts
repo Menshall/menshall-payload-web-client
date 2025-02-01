@@ -395,8 +395,6 @@ export const useScheduleStore = create<ScheduleStoreProps>()(
           body: { location, data },
           onBefore: () => set({ loading: true }),
           onSuccess: async () => {
-            set({ loading: false });
-
             await supabase.from("logs").insert({
               fullname: data.fullname,
               phone: data.phone,
@@ -418,7 +416,7 @@ export const useScheduleStore = create<ScheduleStoreProps>()(
               email: data.email,
               comment: data.comment,
               appointments: JSON.stringify(data.appointments),
-              error,
+              error: error?.message,
               success: false,
               date: new Date().toLocaleString(),
               location,
