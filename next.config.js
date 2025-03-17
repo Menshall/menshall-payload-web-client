@@ -12,6 +12,7 @@ const nextConfig = {
     NEXT_PUBLIC_MAPBOX_TOKEN: process.env.NEXT_PUBLIC_MAPBOX_TOKEN,
   },
   images: {
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
     domains: [
       "localhost",
