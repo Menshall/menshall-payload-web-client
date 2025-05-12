@@ -6,7 +6,6 @@ import SelectableCard from "../../SelectableCard";
 import styles from "./styles.module.scss";
 import general from "../../styles.module.scss";
 import { useScheduleStore } from "@/stores/schedule";
-import { useGeneralData } from "@/providers/general";
 import StarRating from "@/_components/Rating";
 
 const Master = ({
@@ -14,7 +13,6 @@ const Master = ({
 }: {
   onSelectMaster: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }) => {
-  const { barbersFormatted } = useGeneralData();
   const masters = useScheduleStore((state) => state.masters);
   const master = useScheduleStore((state) => state.selected.master);
 
@@ -26,7 +24,7 @@ const Master = ({
         .map((m) => (
           <SelectableCard
             key={m.id}
-            image={barbersFormatted[m.id]?.image || m.avatar_big}
+            image={m.avatar_big}
             name="location"
             type="radio"
             checked={m.id === master?.id}

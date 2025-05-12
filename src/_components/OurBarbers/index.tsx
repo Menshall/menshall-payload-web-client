@@ -14,30 +14,13 @@ const OurBarbers = () => {
   const generalData = useGeneralData();
   const [barbers, setBarbers] = React.useState([]);
 
-  const barbersIDImage = React.useMemo(() => {
-    return generalData.barbers.barbers!.reduce((acc, curr) => {
-      return {
-        ...acc,
-        [curr.id as string]: curr.image,
-      };
-    }, {});
-  }, [generalData.barbers.barbers?.length]);
-
   React.useEffect(() => {
     fetchLocalEndpoint({
       url: `barbers`,
       onSuccess: (response) => {
         const barbers: Array<Barber> = response.barbers;
-        setBarbers(
-          //@ts-ignore
-          barbers.map((b) => {
-            return {
-              ...b,
-              //@ts-ignore
-              image: barbersIDImage[b.id] || b.image,
-            };
-          }),
-        );
+        // @ts-ignore
+        setBarbers(barbers);
       },
     });
   }, []);

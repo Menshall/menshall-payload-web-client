@@ -167,7 +167,6 @@ export default async function RootLayout({
             socials: socials as Data["socials"],
             barbers: barbers as Data["barbers"],
             schedule: schedule as Data["schedule"],
-            barbersFormatted: [] as Data["barbersFormatted"],
           }}
         >
           {children}

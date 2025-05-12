@@ -30,10 +30,6 @@ export type Data = {
     height: number;
     width: number;
   }>;
-  barbersFormatted: {
-    //@ts-ignore
-    [key: string]: Barbers["barbers"][0];
-  };
 };
 
 const GeneralDataContext = createContext<Data>({} as Data);
@@ -45,23 +41,8 @@ export const GeneralDataProvider = ({
   children: React.ReactNode;
   initialData: Data;
 }) => {
-  let barbersFormatted = {} as Data["barbersFormatted"];
-
-  if (initialData.barbers.barbers) {
-    barbersFormatted = initialData.barbers.barbers.reduce(
-      (acc, curr) => {
-        return {
-          ...acc,
-          //@ts-ignore
-          [curr.id]: curr,
-        };
-      },
-      {} as Data["barbersFormatted"],
-    );
-  }
-
   return (
-    <GeneralDataContext.Provider value={{ ...initialData, barbersFormatted }}>
+    <GeneralDataContext.Provider value={initialData}>
       {children}
     </GeneralDataContext.Provider>
   );

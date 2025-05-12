@@ -33,7 +33,6 @@ const VisitCard = ({
   contacts: Contact;
   isFuture: boolean;
 }) => {
-  const { barbersFormatted } = useGeneralData();
   const onRepeat = useScheduleStore((state) => state.actions.onRepeat);
   const onReschedule = useScheduleStore((state) => state.actions.onReschedule);
   const router = useRouter();
@@ -158,15 +157,9 @@ const VisitCard = ({
         )}
       </div>
       <div className={styles.bottom}>
-        {barbersFormatted[visit.staff.id] && (
-          <div className={styles.barberImage}>
-            <CustomImage
-              media={barbersFormatted[visit.staff.id].image}
-              width={72}
-              height={72}
-            />
-          </div>
-        )}
+        <div className={styles.barberImage}>
+          <CustomImage media={visit.staff.avatar} width={72} height={72} />
+        </div>
         <div className={styles.barber}>
           <h4>{visit.staff.name}</h4>
           <Typography size={3}>{visit.staff.specialization}</Typography>
