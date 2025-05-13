@@ -135,11 +135,6 @@ export default async function RootLayout({
           }}
         />
         <Script
-          strategy="lazyOnload"
-          async
-          src="https://www.google-analytics.com/analytics.js"
-        />
-        <Script
           src="https://connect.facebook.net/signals/config/1223843247804052?v=next&amp;r=stable&amp;domain=www.menshall.com.ua"
           async
         />
