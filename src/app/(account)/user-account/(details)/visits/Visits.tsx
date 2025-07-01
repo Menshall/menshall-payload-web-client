@@ -48,7 +48,7 @@ const VisitsComponent = () => {
           staff: visit.staff.id,
           mark,
           text,
-          name,
+          name: user?.name || "Visitor",
         },
         onBefore: () => {
           setFeedbackLoading(true);
